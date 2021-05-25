@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>My Weather App</title>
 </head>
 
@@ -19,7 +19,7 @@
 
 
     <main class="row">
-        <div class="col-4 col-md-4">
+        <div class="col-4 col-md-4 h-100 d-inline-block">
 
             <div class="card">
                 <h3 class="card-header">Search</h3>
@@ -37,15 +37,59 @@
             </div>
         </div>
         <div class="flex-column card col-8">
-            <h3 class="container-header ml-4">TEST TEST TEST</h3>
+            <h3 class="city-name ml-4">Charlotte</h3>
             <div class="card-body">
-                This is some text within a card body.
+                <ul>
+                    <li class="temp">Temp:</li>
+                    <li class="humidity">Humidity:</li>
+                    <li class="wind">Wind:</li>
+                    <li class="uv-index">UV Index:</li>
+                </ul>
             </div>
-        </div>
+            <div class="forcast-day-1 card col-12 flex-column">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+                <div class="forcast-day-2 card col-12 flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                </div>
+                <div class="forcast-day-3 card col-12 flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height action.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="forcast-day-4 card col-12 flex-column">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+                <div class="forcast-day-5 card col-12 flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                            content.</p>
+                    </div>
+                </div>
+            </div>
 
     </main>
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
