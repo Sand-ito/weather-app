@@ -3,9 +3,9 @@ var buttonHistory = document.querySelector('#button-history')
 var inputEl = document.querySelector('#search-bar');
 var cityName = document.querySelector('.city-name');
 var currentConditionsListEl = document.querySelector('.curret-conditions');
-var currentTemp = document.querySelector('.uv-index');
-var currentHumidity = document.querySelector('.uv-index');
-var current = document.querySelector('.uv-index');
+var currentTemp = document.querySelector('.temp');
+var currentHumidity = document.querySelector('.humidity');
+var currentWind = document.querySelector('.wind');
 var uvIndex = document.querySelector('.uv-index');
 var key = "&appid=acf0f53f45fba2ae88e8738d6caadbe5";
 var imperial = "&units=imperial";
@@ -43,6 +43,10 @@ function getWeather() {
         .then(function (data) {
             console.log(data);
             
+            currentTemp.innerHTML = "Temp: " + data.main.temp + "F"
+            currentHumidity.innerHTML = "Humidity: " + data.main.humidity + "%"
+            currentWind.innerHTML = "Wind: " + data.wind.speed + "MPH"
+
             var uviURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + key;
 
             fetch(uviURL)
@@ -50,8 +54,16 @@ function getWeather() {
                     return response.json();
                 })
                 .then(function (uvidata) {
-                    console.log(uvidata.current.uvi);
                     uvIndex.innerHTML = "UV Index: " + uvidata.current.uvi
+
+                    if (parseInt(uvidata.current.uvi) > 8){
+                        uvIndex.classList = "bad"
+                    }  else if (parseInt(uvidata.current.uvi) >= 2 && parseInt(uvidata.current.uvi) < 8){
+                        uvIndex.classList = "moderate "
+                    } else {
+                        uvIndex.classList = "safe";
+                    }
+                    
                 })
         })
 };

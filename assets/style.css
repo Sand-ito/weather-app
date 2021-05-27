@@ -12,3 +12,15 @@ h1 {
     padding: 16px;
     background-color: var(--Deep);
 }
+
+.bad {
+    background-color: red;
+}
+
+.moderate{
+    background-color: yellow;
+}
+
+.safe {
+    background-color: green;
+}
