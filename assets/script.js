@@ -21,9 +21,9 @@ function renderHistory() {
    clearHistory();
 
    searchHistory.forEach(function(currentValue, index, array) {
-      var newButton = document.createElement('button')
+      var newButton = document.createElement('button');
       buttonHistory.appendChild(newButton);
-      newButton.innerHTML = currentValue
+      newButton.innerHTML = currentValue;
 
    })
 };
@@ -34,7 +34,7 @@ function getWeather() {
     fetch(currentWeatherURL)
         .then(function (response) {
             if (response.ok) {
-                return response.json()
+                return response.json();
             } 
             else {
                 alert('Error: ' + response.statusText + '. \nPerhaps you misspelled the city name, or we do not have it in our database. Please try again.');
@@ -43,9 +43,9 @@ function getWeather() {
         .then(function (data) {
             console.log(data);
             
-            currentTemp.innerHTML = "Temp: " + data.main.temp + "F"
-            currentHumidity.innerHTML = "Humidity: " + data.main.humidity + "%"
-            currentWind.innerHTML = "Wind: " + data.wind.speed + "MPH"
+            currentTemp.innerHTML = "Temp: " + data.main.temp + "F";
+            currentHumidity.innerHTML = "Humidity: " + data.main.humidity + "%";
+            currentWind.innerHTML = "Wind: " + data.wind.speed + "MPH";
 
             var uviURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + key;
             
@@ -75,7 +75,7 @@ function getFiveDay() {
     fetch(fiveDayURL)
         .then(function (response) {
             if (response.ok) {
-                return response.json()
+                return response.json();
             }
         })
         .then(function (data) {
@@ -134,7 +134,7 @@ function getFiveDay() {
             tempDay5.innerHTML = "Temp: " + data.list[32].main.temp + "F";
             windDay5.innerHTML = "Wind: " + data.list[32].wind.speed + "MPH";
             humidityDay5.innerHTML = "Humidity: " + data.list[32].main.humidity + "%";
-        })
+        });
 };
 
 buttonEl.addEventListener('click', function (event) {
